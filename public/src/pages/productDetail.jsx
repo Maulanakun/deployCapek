@@ -14,7 +14,7 @@ const ProductDetail = () => {
     useEffect(() => {
         const fetchData = async () => {
           try {
-            const response = await axios.get(`http://localhost:3000/pubReadProduct/${id}`);
+            const response = await axios.get(`https://anasendiri.cloud/pubReadProduct/${id}`);
             setproductDetail(response.data.dataProduct);
         } catch (error) {
             console.error("Error fetching data: ", error);

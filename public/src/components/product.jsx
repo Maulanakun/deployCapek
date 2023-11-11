@@ -13,7 +13,7 @@ const YourComponent = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/pubReadProduct');
+        const response = await axios.get('https://anasendiri.cloud/pubReadProduct');
         setProductList(response.data.result.data);
         setLoading(true)
       } catch (error) {
