@@ -2,29 +2,13 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 
 import { useNavigate } from "react-router-dom";
-const YourComponent = () => {
-  const [productList, setProductList] = useState([]);
-  const [loading,setLoading] = useState(true)
+const YourComponent = ({productList,loading}) => {
   const navigate = useNavigate()
   const handleClick = (id) => {
         navigate(`${id}`)
     }
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('https://anasendiri.cloud/pubReadProduct');
-        setProductList(response.data.result.data);
-        setLoading(true)
-      } catch (error) {
-        console.error("Error fetching data: ", error);
-      }finally{
-        setLoading(false)
-      }
-    };
 
-    fetchData();
-  }, []); // Empty dependency array means this effect will run once after the initial render
   return (
     <>
       <div className="container pb-16">
